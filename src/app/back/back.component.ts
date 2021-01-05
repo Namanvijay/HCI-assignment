@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class BackComponent implements OnInit {
 
   issubmit=false;
+  top=0;
+  bottom=0;
+  mid=0;
   score=0;
   cat=false;
   elephant=false;
@@ -57,6 +60,9 @@ export class BackComponent implements OnInit {
   ngOnInit(): void {
 
     this.score=0;
+    this.top=0;
+    this.bottom=0;
+    this.mid=0;
     this.issubmit=false;
     this.cat=false;
     this.elephant=false;
@@ -105,43 +111,53 @@ export class BackComponent implements OnInit {
     if(this.cat==true)
     {
       this.correct=this.correct+1;
+      this.top=this.top+1;
     }
     if(this.elephant==true)
     {
       this.correct=this.correct+1;
+      this.top=this.top+1;
 
     }
     if(this.goat==true)
     {
       this.correct=this.correct+1;
+      this.top=this.top+1;
     }
     if(this.lion==true)
     {
       this.correct=this.correct+1;
+      this.mid=this.mid+1;
     }
     if(this.rabbit==true)
     {
       this.correct=this.correct+1;
+      this.mid=this.mid+1;
     }
     if(this.tiger==true)
     {
       this.correct=this.correct+1;
+      this.mid=this.mid+1;
     }
     if(this.mouse==true)
     {
       this.correct=this.correct+1;
+      this.mid=this.mid+1;
     }
     if(this.cow==true)
     {
       this.correct=this.correct+1;
+      this.bottom=this.bottom+1;
     }
     if(this.horse==true)
     {
       this.correct=this.correct+1;
+      this.bottom=this.bottom+1;
     }
     if(this.wolf==true)
     {
       this.correct=this.correct+1;
+      this.bottom=this.bottom+1;
     }
     if(this.A==true)
     {
@@ -246,8 +262,8 @@ export class BackComponent implements OnInit {
 
     this.issubmit=true;
     this.score=this.correct-this.incorrect;
-    console.log(this.correct);
-    console.log(this.incorrect);
+    console.log("Total Correct guess"+ this.correct);
+    console.log("Incorrect Guess"+ this.incorrect);
   }
 
 }
